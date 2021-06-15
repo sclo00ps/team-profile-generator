@@ -1,7 +1,7 @@
 {
   "name": "team-profile-generator",
   "version": "1.0.0",
-  "description": "",
+  "description": "team description",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -10,11 +10,14 @@
     "type": "git",
     "url": "git+https://github.com/sclo00ps/team-profile-generator.git"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "author": "lscott",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/sclo00ps/team-profile-generator/issues"
   },
-  "homepage": "https://github.com/sclo00ps/team-profile-generator#readme"
+  "homepage": "https://github.com/sclo00ps/team-profile-generator#readme",
+  "dependencies": {
+    "inquirer": "^8.1.0",
+    "jest": "^27.0.4"
+  }
 }
