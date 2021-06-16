@@ -90,17 +90,19 @@ return inquirer
                 } else { return 'a value must be entered to continue' }
             }
         },
-        //{
+        {
             // rethink add if stmt to exit chg validate stmt
-         //   type: 'list',
-         //   name: 'newmbr',
-        //    message: 'Would you like to add a new team member, if so select a role?',
-         //   choices: ["Manager", "Intern"],
-         //   validate: (value) => {if (value) {return true
-         //   } else { return 'a value must be entered to continue' }
-        //}
-        //}
-       // },
+            type: 'list',
+            name: 'newmbr',
+            message: 'Would you like to add a new team member, if so select a role?',
+            choices: ["Manager", "Intern"],
+            validate: (value) => {if (value) {return true
+         //     } else { return 'a value must be entered to continue' }
+              } else {exit}
+            }
+        },
+
+      //},
 
     ])
     .then((answers) => {
