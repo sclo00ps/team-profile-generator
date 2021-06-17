@@ -1,8 +1,10 @@
 //classes required 
-const Employee = require("./lib/Employee");
-const Engineer = require("./lib/Engineer");
-const Manager = require("./lib/Manager");
-const Intern = require("./lib/Intern");
+const employee = require("./lib/Employee.js");
+console.log("employee");
+const engineer = require("./lib/Engineer.js");
+console.log("Engineer");
+const manager = require("./lib/Manager.js");
+const Intern = require("./lib/Intern.js");
 //inquirer npm pkg for user prompts
 const inquirer = require('inquirer');
 //testing npm pkg
