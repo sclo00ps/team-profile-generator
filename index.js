@@ -1,10 +1,10 @@
 //classes required to run application
-//const Employee = require('./lib/employee.js');
-//console.log("employee");
-const Engineer = require('./lib/engineer');
-console.log(Engineer);
-const Manager = require('./lib/manager');
-const Intern = require('./lib/intern');
+const Employee = require('./lib/Employee.js');
+//console.log(employee)
+const Engineer = require('./lib/Engineer.js');
+//console.log(Engineer)
+const Manager = require('./lib/manager.js');
+const Intern = require('./lib/intern.js');
 //inquirer npm pkg for user prompts
 const inquirer = require('inquirer');
 //testing npm pkg
@@ -99,8 +99,8 @@ return inquirer
             message: 'Would you like to add a new team member, if so select a role?',
             choices: ["Manager", "Intern"],
             validate: (value) => {if (value) {return true
-         //     } else { return 'a value must be entered to continue' }
-              } else {exit}
+            } else { return 'a value must be entered to continue' }
+         //     } else {exit}
             }
         },
 
