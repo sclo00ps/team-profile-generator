@@ -1,16 +1,16 @@
 //classes required to run application
-const employee = require('./lib/Employee.js');
+const Employee = require('./lib/employee.js');
 console.log("employee");
-const engineer = require('./lib/Engineer.js');
+const Engineer = require('./lib/engineer.js');
 console.log("Engineer");
-const manager = require('./lib/Manager.js');
-const Intern = require('./lib/Intern.js');
+const Manager = require('./lib/manager.js');
+const Intern = require('./lib/intern.js');
 //inquirer npm pkg for user prompts
 const inquirer = require('inquirer');
 //testing npm pkg
-const jest = require("jest");
+//const jest = require('jest');
 //file system required for writing to file
-const fs = require("fs");
+const fs = require('fs');
 
 
 // Initialize Questions object
