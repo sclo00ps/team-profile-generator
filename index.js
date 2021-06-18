@@ -88,7 +88,8 @@ return inquirer
         type: 'input',
         name: 'mgroffnbr',
         message: 'What is the office number of your Manager?',
-        validate: (value) => {if (value) {return true
+        validate: (value) => {
+            if (value) {return true
             } else { return 'a value must be entered to continue' }
         }
     },
