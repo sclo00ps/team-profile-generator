@@ -48,7 +48,7 @@ return inquirer
         type: 'list',
         name: 'mgrname',
         message: 'Please select the Manager value to begin entering your team members information?',
-        choices: ["Manager"]
+        choices: ["Manager"],
         validate: (value) => {
             if (value) {
                 return true
