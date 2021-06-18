@@ -46,9 +46,19 @@ return inquirer
     .prompt([
     {
         type: 'list',
-        name: 'mgrname',
+        name: 'mgr',
         message: 'Please select the Manager value to begin entering your team members information?',
         choices: ["Manager"],
+        validate: (value) => {
+            if (value) {
+                return true
+            } else { return 'a value must be entered to continue' }
+        }
+    },
+    {
+        type: 'input',
+        name: 'mgrname',
+        message: 'What is the name of your Manager?',
         validate: (value) => {
             if (value) {
                 return true
