@@ -44,11 +44,57 @@ const teamMbrs = [];
 
 return inquirer
     .prompt([
+    {
+        type: 'list',
+        name: 'mgrname',
+        message: 'What is the name of your Manager?',
+        choices: ["Manager", "Intern"],
+        validate: (value) => {
+            if (value) {
+                return true
+            } else { return 'a value must be entered to continue' }
+        }
+    },
+    {
+        type: 'input',
+        name: 'mgrid',
+        message: 'What is the employee id of your Manager?',
+        validate: (value) => {
+            if (value) {
+                return true
+            } else { return 'a value must be entered to continue' }
+        }
+    },
+    {
+        type: 'input',
+        name: 'mgremail',
+        message: 'What is the email address of your Manager?',
+        validate: (value) => {
+            if (value) {return true
+            } else { return 'a value must be entered to continue' }
+        }
+    },
+    {
+        type: 'input',
+        name: 'mgroffnbr',
+        message: 'What is the office number of your Manager?',
+        validate: (value) => {if (value) {return true
+            } else { return 'a value must be entered to continue' }
+        }
+    },
+    {
+        type: 'list',
+        name: 'continue',
+        message: 'Do you want to enter another team member? ',
+        validate: (value) => {if (value) {return true
+            } else { return 'a value must be entered to continue' }
+        }
+    },
         {
             type: 'list',
             name: 'role',
             message: 'What is the team member role?',
-            choices: ["Engineer", "Intern", "Manager"],
+            choices: ["Engineer", "Intern"],
             validate: (value) => {
                 if (value) {
                     return true
@@ -58,7 +104,7 @@ return inquirer
         {
             type: 'input',
             name: 'name',
-            message: 'What is the team member name?',
+            message: 'What is the employee name?',
             validate: (value) => {
                 if (value) {
                     return true
