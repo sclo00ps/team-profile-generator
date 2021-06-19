@@ -3,8 +3,8 @@ const Employee = require('./lib/Employee.js');
 //console.log(employee)
 const Engineer = require('./lib/Engineer.js');
 //console.log(Engineer)
-const Manager = require('./lib/manager.js');
-const Intern = require('./lib/intern.js');
+const Manager = require('./lib/Manager.js');
+const Intern = require('./lib/Intern.js');
 //inquirer npm pkg for user prompts
 const inquirer = require('inquirer');
 //testing npm pkg
