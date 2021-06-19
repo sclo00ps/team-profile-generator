@@ -95,12 +95,16 @@ return inquirer
     },
     {
         type: 'list',
-        name: 'continue',
-        message: 'Do you want to enter another team member? ',
+        name: 'contchoices',
+        message: 'What do you want to do?',
+        choices: [
+            "Add a new team member",
+            "Exit"
+        ]
         validate: (value) => {if (value) {return true
             } else { return 'a value must be entered to continue' }
         }
-    },
+        },
         {
             type: 'list',
             name: 'role',
