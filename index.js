@@ -107,7 +107,7 @@ return inquirer
                     return true
                 } else { return 'a value must be entered to continue' }
             }
-        }
+        },
       //  }])
 
           /*  .then((answers) => {
@@ -141,6 +141,8 @@ return inquirer
                     return true
                 } else { return 'a value must be entered to continue' }
             }
+        },
+        {
             type: 'input',
             name: 'name',
             message: 'What is the name of the addtional team member?',
@@ -220,7 +222,7 @@ return inquirer
            
        //  ])
         
-        {
+            {
             type: 'list',
             name: 'addtlmbrs',
             message: 'Please select the role of tthe additional team member ?',
@@ -229,7 +231,9 @@ return inquirer
                 if (value) {
                     return true
                 } else { return 'a value must be entered to continue' }
-            }
+                }
+            },
+            {
             type: 'input',
             name: 'name',
             message: 'What is the name of the addtional team member?',
@@ -237,9 +241,9 @@ return inquirer
                 if (value) {
                     return true
                 } else { return 'a value must be entered to continue' }
-            }
-        },
-        {
+                }
+            },
+            {
             type: 'input',
             name: 'id',
             message: 'What is the employee id of the additional team member?',
@@ -261,8 +265,8 @@ return inquirer
             },
             {
             type: 'input',
-            name: 'github',
-            message: 'What is the GitHub username of the additional team member?',
+            name: 'school',
+            message: 'What is the name of the school of the additional team member?',
             validate: (value) => {
                 if (value) {
                      return true
@@ -279,8 +283,7 @@ return inquirer
                 if (value) {
                      return true
                 } else { return 'a value must be entered to continue' }
-                        //     } else {exit}
-                    }
+                }
             },
          ])
             .then((answers) => {
