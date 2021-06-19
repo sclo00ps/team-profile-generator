@@ -12,7 +12,6 @@ const inquirer = require("inquirer");
 //file system required for writing to file
 const fs = require("fs");
 
-
 // Initialize Questions object
 const teamMbrs = [];
 
@@ -108,11 +107,12 @@ return inquirer
                     return true
                 } else { return 'a value must be entered to continue' }
             }
-        }])
+        }
+      //  }])
 
-            .then((answers) => {
+          /*  .then((answers) => {
             const htmlPageContent = generateHTML(answers);
-            if (answers.contchoices = "Exit") {
+            if (answers.contchoices === "Exit") {
             fs.writeFile('index.html', htmlPageContent, (err) =>
                 err ? console.log(err) : console.log('Successfully created index.html!')) 
             } else {
@@ -129,10 +129,21 @@ return inquirer
                 } else { return 'a value must be entered to continue' }
             }
         },
+        */
+
         {
+            type: 'list',
+            name: 'addtlmbrs',
+            message: 'Please select the role of tthe additional team member ?',
+            choices: ["Engineer", "Intern"],
+            validate: (value) => {
+                if (value) {
+                    return true
+                } else { return 'a value must be entered to continue' }
+            }
             type: 'input',
             name: 'name',
-            message: 'What is the employee name?',
+            message: 'What is the name of the addtional team member?',
             validate: (value) => {
                 if (value) {
                     return true
@@ -142,7 +153,7 @@ return inquirer
         {
             type: 'input',
             name: 'id',
-            message: 'What is the team member id?',
+            message: 'What is the employee id of the additional team member?',
             validate: (value) => {
                 if (value) {
                     return true
@@ -152,7 +163,7 @@ return inquirer
             {
             type: 'input',
             name: 'email',
-            message: 'What is the team member email address?',
+            message: 'What is the email address of the additional team member?',
             validate: (value) => {
                 if (value) {
                      return true
@@ -162,7 +173,96 @@ return inquirer
             {
             type: 'input',
             name: 'github',
-            message: 'Enter your GitHub Username',
+            message: 'What is the GitHub username of the additional team member?',
+            validate: (value) => {
+                if (value) {
+                     return true
+                } else { return 'a value must be entered to continue' }
+                }
+            },
+            {
+                type: 'list',
+                name: 'contchoices',
+                message: 'What do you want to do?',
+                choices: [
+                    "Add a new team member",
+                    "Exit"
+                ],
+                validate: (value) => {
+                    if (value) {
+                        return true
+                    } else { return 'a value must be entered to continue' }
+                }
+            },
+
+            //  }])
+
+          /*  .then((answers) => {
+            const htmlPageContent = generateHTML(answers);
+            if (answers.contchoices === "Exit") {
+            fs.writeFile('index.html', htmlPageContent, (err) =>
+                err ? console.log(err) : console.log('Successfully created index.html!')) 
+            } else {
+            return inquirer
+                .prompt([
+        {
+            type: 'list',
+            name: 'role',
+            message: 'What is the team member role?',
+            choices: ["Engineer", "Intern"],
+            validate: (value) => {
+                if (value) {
+                    return true
+                } else { return 'a value must be entered to continue' }
+            }
+        },
+        */
+           
+       //  ])
+        
+        {
+            type: 'list',
+            name: 'addtlmbrs',
+            message: 'Please select the role of tthe additional team member ?',
+            choices: ["Engineer", "Intern"],
+            validate: (value) => {
+                if (value) {
+                    return true
+                } else { return 'a value must be entered to continue' }
+            }
+            type: 'input',
+            name: 'name',
+            message: 'What is the name of the addtional team member?',
+            validate: (value) => {
+                if (value) {
+                    return true
+                } else { return 'a value must be entered to continue' }
+            }
+        },
+        {
+            type: 'input',
+            name: 'id',
+            message: 'What is the employee id of the additional team member?',
+            validate: (value) => {
+                if (value) {
+                    return true
+                } else { return 'a value must be entered to continue' }
+                }
+            },
+            {
+            type: 'input',
+            name: 'email',
+            message: 'What is the email address of the additional team member?',
+            validate: (value) => {
+                if (value) {
+                     return true
+                } else { return 'a value must be entered to continue' }
+                }
+            },
+            {
+            type: 'input',
+            name: 'github',
+            message: 'What is the GitHub username of the additional team member?',
             validate: (value) => {
                 if (value) {
                      return true
@@ -190,6 +290,6 @@ return inquirer
             
                 );
             })   
-        }
+        
             
-    })
+    
