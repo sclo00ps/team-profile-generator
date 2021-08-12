@@ -11,6 +11,9 @@ const inquirer = require("inquirer");
 //const jest = require('jest');
 //file system required for writing to file
 const fs = require("fs");
+//const util = require('util');
+
+//const writeFileAsync = util.promisify(fs.writeFile);
 
 // Initialize Questions object
 const teamMbrs = [];
@@ -40,6 +43,59 @@ const teamMbrs = [];
 //</div>
 //</body>
 //</html>`;
+
+//start displays all actions user can select
+// const start = () => {
+//     return inquirer.prompt({
+//       name: 'action',
+//       type: 'list',
+//       message: 'What would you like to do?',
+//       choices: [
+//         'Add a new department',
+//         'Add a new employee role',
+//         'Add a new employee',
+//         'View all departments',
+//         'View all roles',
+//         'View all employees',
+//         'Update employee roles',
+//       ],
+//     })
+//     .then((answer) => {
+//       switch (answer.action) {
+//         case 'Add a new department':
+//           addDepartment();
+//           break;
+    
+//         case 'Add a new employee role':
+//           addRole();
+//           break;
+    
+//         case 'Add a new employee':
+//          addEmployee();
+//           break;
+    
+//           case 'View all departments':
+//           viewDepartment();
+//           break;
+    
+//         case 'View all roles':
+//           viewRole();
+//           break;
+    
+//         case 'View all employees':
+//           viewEmployee();
+//           break;
+    
+//         case 'Update employee roles':
+//           updateRole();
+//           break;
+       
+//         default:
+//           console.log(`Invalid action: ${answer.action}`);
+//           break;
+//       }
+//     });
+//     };
 
 return inquirer
     .prompt([
