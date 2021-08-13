@@ -65,31 +65,31 @@ const teamMbrs = [];
 //         case 'Add a new department':
 //           addDepartment();
 //           break;
-    
+
 //         case 'Add a new employee role':
 //           addRole();
 //           break;
-    
+
 //         case 'Add a new employee':
 //          addEmployee();
 //           break;
-    
+
 //           case 'View all departments':
 //           viewDepartment();
 //           break;
-    
+
 //         case 'View all roles':
 //           viewRole();
 //           break;
-    
+
 //         case 'View all employees':
 //           viewEmployee();
 //           break;
-    
+
 //         case 'Update employee roles':
 //           updateRole();
 //           break;
-       
+
 //         default:
 //           console.log(`Invalid action: ${answer.action}`);
 //           break;
@@ -102,7 +102,7 @@ return inquirer
         {
             type: 'list',
             name: 'mgr',
-            message: 'Please select the Manager value to begin entering your team members information?',
+            message: 'Select the Manager value to begin entering your team manager information.',
             choices: ["Manager"],
             validate: (value) => {
                 if (value) {
@@ -113,7 +113,7 @@ return inquirer
         {
             type: 'input',
             name: 'mgrname',
-            message: 'What is the name of your Manager?',
+            message: 'What is the team manager name?',
             validate: (value) => {
                 if (value) {
                     return true
@@ -123,7 +123,7 @@ return inquirer
         {
             type: 'input',
             name: 'mgrid',
-            message: 'What is the employee id of your Manager?',
+            message: 'What is the the team manager id?',
             validate: (value) => {
                 if (value) {
                     return true
@@ -133,7 +133,7 @@ return inquirer
         {
             type: 'input',
             name: 'mgremail',
-            message: 'What is the email address of your Manager?',
+            message: 'What is the the team manager email address?',
             validate: (value) => {
                 if (value) {
                     return true
@@ -143,7 +143,7 @@ return inquirer
         {
             type: 'input',
             name: 'mgroffnbr',
-            message: 'What is the office number of your Manager?',
+            message: 'What is the the team manager office number?',
             validate: (value) => {
                 if (value) {
                     return true
@@ -164,20 +164,33 @@ return inquirer
                 } else { return 'a value must be entered to continue' }
             }
         },
-      //  }])
+        //  }])
 
-          /*  .then((answers) => {
-            const htmlPageContent = generateHTML(answers);
-            if (answers.contchoices === "Exit") {
-            fs.writeFile('index.html', htmlPageContent, (err) =>
-                err ? console.log(err) : console.log('Successfully created index.html!')) 
-            } else {
-            return inquirer
-                .prompt([
+        /*  .then((answers) => {
+          const htmlPageContent = generateHTML(answers);
+          if (answers.contchoices === "Exit") {
+          fs.writeFile('index.html', htmlPageContent, (err) =>
+              err ? console.log(err) : console.log('Successfully created index.html!')) 
+          } else {
+          return inquirer
+              .prompt([
+      {
+          type: 'list',
+          name: 'role',
+          message: 'What is the team member role?',
+          choices: ["Engineer", "Intern"],
+          validate: (value) => {
+              if (value) {
+                  return true
+              } else { return 'a value must be entered to continue' }
+          }
+      },
+      */
+
         {
             type: 'list',
-            name: 'role',
-            message: 'What is the team member role?',
+            name: 'addtlmbrs',
+            message: 'Please select the role of the additional team member ?',
             choices: ["Engineer", "Intern"],
             validate: (value) => {
                 if (value) {
@@ -185,7 +198,162 @@ return inquirer
                 } else { return 'a value must be entered to continue' }
             }
         },
-        */
+        {
+            type: 'input',
+            name: 'engname',
+            message: 'What is the name of the engineer',
+            validate: (value) => {
+                if (value) {
+                    return true
+                } else { return 'a value must be entered to continue' }
+            }
+        },
+        {
+            type: 'input',
+            name: 'engid',
+            message: 'What is the employee id of the engineer?',
+            validate: (value) => {
+                if (value) {
+                    return true
+                } else { return 'a value must be entered to continue' }
+            }
+        },
+        {
+            type: 'input',
+            name: 'engemail',
+            message: 'What is the email address of the engineer?',
+            validate: (value) => {
+                if (value) {
+                    return true
+                } else { return 'a value must be entered to continue' }
+            }
+        },
+        {
+            type: 'input',
+            name: 'enggithub',
+            message: 'What is the GitHub username of the engineer?',
+            validate: (value) => {
+                if (value) {
+                    return true
+                } else { return 'a value must be entered to continue' }
+            }
+        },
+        {
+            type: 'list',
+            name: 'contchoices',
+            message: 'What do you want to do?',
+            choices: [
+                "Add a new team member",
+                "Exit"
+            ],
+            validate: (value) => {
+                if (value) {
+                    return true
+                } else { return 'a value must be entered to continue' }
+            }
+        },
+        {
+            type: 'list',
+            name: 'addtlmbrs',
+            message: 'Please select the role of the additional team member ?',
+            choices: ["Engineer", "Intern"],
+            validate: (value) => {
+                if (value) {
+                    return true
+                } else { return 'a value must be entered to continue' }
+
+            }
+        },
+        {
+            type: 'input',
+            name: 'intname',
+            message: 'What is the name of the intern?',
+            validate: (value) => {
+                if (value) {
+                    return true
+                } else { return 'a value must be entered to continue' }
+            }
+        },
+        {
+            type: 'input',
+            name: 'intid',
+            message: 'What is the employee id of the intern?',
+            validate: (value) => {
+                if (value) {
+                    return true
+                } else { return 'a value must be entered to continue' }
+            }
+        },
+        {
+            type: 'input',
+            name: 'intemail',
+            message: 'What is the email address of the intern?',
+            validate: (value) => {
+                if (value) {
+                    return true
+                } else { return 'a value must be entered to continue' }
+            }
+        },
+        {
+            type: 'input',
+            name: 'intgithub',
+            message: 'What is the GitHub username of the intern?',
+            validate: (value) => {
+                if (value) {
+                    return true
+                } else { return 'a value must be entered to continue' }
+            }
+        },
+        {
+            type: 'input',
+            name: 'intschool',
+            message: 'What is the school name of the intern?',
+            validate: (value) => {
+                if (value) {
+                    return true
+                } else { return 'a value must be entered to continue' }
+            }
+        },
+        {
+            type: 'list',
+            name: 'contchoices',
+            message: 'What do you want to do?',
+            choices: [
+                "Add a new team member",
+                "Exit"
+            ],
+            validate: (value) => {
+                if (value) {
+                    return true
+                } else { return 'a value must be entered to continue' }
+            }
+        },
+
+
+        //  }])
+
+        /*  .then((answers) => {
+          const htmlPageContent = generateHTML(answers);
+          if (answers.contchoices === "Exit") {
+          fs.writeFile('index.html', htmlPageContent, (err) =>
+              err ? console.log(err) : console.log('Successfully created index.html!')) 
+          } else {
+          return inquirer
+              .prompt([
+      {
+          type: 'list',
+          name: 'role',
+          message: 'What is the team member role?',
+          choices: ["Engineer", "Intern"],
+          validate: (value) => {
+              if (value) {
+                  return true
+              } else { return 'a value must be entered to continue' }
+          }
+      },
+      */
+
+        //  ])
 
         {
             type: 'list',
@@ -216,120 +384,29 @@ return inquirer
                 if (value) {
                     return true
                 } else { return 'a value must be entered to continue' }
-                }
-            },
-            {
+            }
+        },
+        {
             type: 'input',
             name: 'email',
             message: 'What is the email address of the additional team member?',
-            validate: (value) => {
-                if (value) {
-                     return true
-                } else { return 'a value must be entered to continue' }
-                }
-            },
-            {
-            type: 'input',
-            name: 'github',
-            message: 'What is the GitHub username of the additional team member?',
-            validate: (value) => {
-                if (value) {
-                     return true
-                } else { return 'a value must be entered to continue' }
-                }
-            },
-            {
-                type: 'list',
-                name: 'contchoices',
-                message: 'What do you want to do?',
-                choices: [
-                    "Add a new team member",
-                    "Exit"
-                ],
-                validate: (value) => {
-                    if (value) {
-                        return true
-                    } else { return 'a value must be entered to continue' }
-                }
-            },
-
-            //  }])
-
-          /*  .then((answers) => {
-            const htmlPageContent = generateHTML(answers);
-            if (answers.contchoices === "Exit") {
-            fs.writeFile('index.html', htmlPageContent, (err) =>
-                err ? console.log(err) : console.log('Successfully created index.html!')) 
-            } else {
-            return inquirer
-                .prompt([
-        {
-            type: 'list',
-            name: 'role',
-            message: 'What is the team member role?',
-            choices: ["Engineer", "Intern"],
             validate: (value) => {
                 if (value) {
                     return true
                 } else { return 'a value must be entered to continue' }
             }
         },
-        */
-           
-       //  ])
-        
-            {
-            type: 'list',
-            name: 'addtlmbrs',
-            message: 'Please select the role of tthe additional team member ?',
-            choices: ["Engineer", "Intern"],
-            validate: (value) => {
-                if (value) {
-                    return true
-                } else { return 'a value must be entered to continue' }
-                }
-            },
-            {
-            type: 'input',
-            name: 'name',
-            message: 'What is the name of the addtional team member?',
-            validate: (value) => {
-                if (value) {
-                    return true
-                } else { return 'a value must be entered to continue' }
-                }
-            },
-            {
-            type: 'input',
-            name: 'id',
-            message: 'What is the employee id of the additional team member?',
-            validate: (value) => {
-                if (value) {
-                    return true
-                } else { return 'a value must be entered to continue' }
-                }
-            },
-            {
-            type: 'input',
-            name: 'email',
-            message: 'What is the email address of the additional team member?',
-            validate: (value) => {
-                if (value) {
-                     return true
-                } else { return 'a value must be entered to continue' }
-                }
-            },
-            {
+        {
             type: 'input',
             name: 'school',
             message: 'What is the name of the school of the additional team member?',
             validate: (value) => {
                 if (value) {
-                     return true
+                    return true
                 } else { return 'a value must be entered to continue' }
-                }
-            },
-            {
+            }
+        },
+        {
             // rethink add if stmt to exit chg validate stmt
             type: 'list',
             name: 'newmbr',
@@ -337,18 +414,17 @@ return inquirer
             choices: ["Manager", "Intern"],
             validate: (value) => {
                 if (value) {
-                     return true
+                    return true
                 } else { return 'a value must be entered to continue' }
-                }
-            },
-         ])
-            .then((answers) => {
-            const htmlPageContent = generateHTML(answers);
-            fs.writeFile('index.html', htmlPageContent, (err) =>
+            }
+        },
+    ])
+    .then((answers) => {
+        const htmlPageContent = generateHTML(answers);
+        fs.writeFile('index.html', htmlPageContent, (err) =>
             err ? console.log(err) : console.log('Successfully created index.html!')
-            
-                );
-            })   
-        
-            
-    
+
+        );
+    })
+
+
