@@ -267,7 +267,7 @@ return inquirer
 //         'Add intern',
 //         'Exit',
 //       ],
-//     })
+//     })git
 //     .then((answers) => {
 //       switch (answers.action) {
 //         case 'Add manager':
